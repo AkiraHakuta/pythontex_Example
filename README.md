@@ -34,6 +34,7 @@ pdflatex.exe -synctex=1 -interaction=nonstopmode TrigonometricTable.tex
 ***
 
 ### in japanese
+# 
 
 ### 誕生日問題
 #### probability.py
