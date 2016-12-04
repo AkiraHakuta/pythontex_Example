@@ -39,15 +39,15 @@ pdflatex.exe -synctex=1 -interaction=nonstopmode TrigonometricTable.tex
 #### probability.py
 n人の中に同じ誕生日の人がいない（つまり、n人の誕生日がすべて異なる）  
 確率を求める関数 distinct_prob(n) を定義しています。  
-n人の中に同じ誕生日の人がいる確率は1-prob( n)です。  
+n人の中に同じ誕生日の人がいる確率は 1 - distinct_prob(n) です。  
 何度かテレビのクイズ番組で出題されました。  
-実行すると、nが 2 から 100 までの 1 - distinct_prob(n) のグラフの pdf を作成し、表示します。xで終了。  
+実行すると、1 - distinct_prob(n) ( n = 2, 3, ...,100 ) のグラフの pdf を作成し、表示します。xで終了。  
 さらに、  
 There are 40 persons in my class. The Birthday-Problem's probability is 0.891.  
 と出力します。  
 if __name__ == '__main__': 以下のコードは、他のプログラムから読み込まれたときは、実行されません。  
 よく使う手です。  
-このようにして、まず、 tex で使用する画像、関数を確認しながら作成します。  
+このように、まず、python のプログラムを作成します。  
 
 #### BirthdayProblem.tex
 probability.py で定義した関数 distinct_prob をfrom probability import distinct_prob で読み込みます。  
