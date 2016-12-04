@@ -1,0 +1,81 @@
+%TrigonometricTable.tex    Author: Akira Hakuta, Date: 2016/12/04
+%pdflatex.exe -synctex=1 -interaction=nonstopmode TrigonometricTable.tex
+%pythontex.exe  TrigonometricTable.tex
+%pdflatex.exe -synctex=1 -interaction=nonstopmode TrigonometricTable.tex
+
+\documentclass[a4paper, twocolumn, 11pt]{article}
+%\documentclass[a4paper, twocolumn, 11pt, jadriver=standard]{bxjsarticle}
+
+\setlength{\textwidth}{195mm}
+\setlength{\textheight}{265mm} 
+\setlength{\voffset}{0mm}
+\setlength{\topmargin}{-15mm}
+\setlength{\headheight}{8mm}
+\setlength{\headsep}{0mm}
+\setlength{\columnsep}{5mm}
+\setlength{\evensidemargin}{0mm}
+\setlength{\oddsidemargin}{-17mm}
+\usepackage{setspace}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\chead{}
+\renewcommand{\headrulewidth}{0.0pt}
+\cfoot{}
+\setlength{\columnseprule}{0.0pt}
+
+\usepackage{pythontex}
+
+\begin{document} 
+\lhead{\bf\Large  ~~~Trigonometric~Table}
+   
+\begin{pycode}
+import math
+
+step = 0.5 #0.1 0.2 0.5 1.0
+start, end = 0, 90
+line_num = 45
+
+step10=int(step*10)
+start10, end10 = start*10, end*10
+
+def one_page_print(start1, step1):
+    x10 = start1
+    print(r"\begin{table}")
+    print(r"\setstretch{1.1}")
+    print(r"\begin{center}")
+    print(r"\begin{tabular}{|c|c|c|c|}")
+    print(r"\hline")
+    print(r"$~~~x~~~$ & $~~~~\sin x~~~~$& $~~~~\cos x~~~~$ & $~~~~\tan x~~~~$  \\ \hline")
+    for line in range(line_num + 1):
+        rad = x10*math.pi/180 /10
+        if x10== end10:
+            print(r"{:4.1f}$^\circ$ & {:8.6f}  & {:8.6f} & undefined\\".format(x10/10, math.sin(rad), math.cos(rad)))
+        else:
+            if math.tan(rad) <100:
+                print(r"{:4.1f}$^\circ$ & {:8.6f}  & {:8.6f} & {:8.6f}\\".format(x10/10, math.sin(rad), math.cos(rad), math.tan(rad)))                
+            else:
+                print(r"{:4.1f}$^\circ$ & {:8.6f}  & {:8.6f} & {:8.3e}\\".format(x10/10, math.sin(rad), math.cos(rad), math.tan(rad)))                
+        if line%5 == 0:
+            print(r"\hline")
+        x10 += step1
+        if x10 > end10:
+           print(r"\end{tabular}") 
+           print(r"\end{center}")
+           print(r"\end{table}")
+           return 
+    print(r"\end{tabular}") 
+    print(r"\end{center}")
+    print(r"\end{table}") 
+
+
+x10 = start10
+while True:
+    if x10 == end10:
+        break
+    one_page_print(x10, step10)    
+    x10 += step10*line_num       
+ 
+\end{pycode} 
+                
+\end{document}
