@@ -65,8 +65,8 @@ python のコードをcopy, past する。
 python のコードは、上記のように、import で取り込む。  
 この場合は、この方法が best!  
 
-### 三角関数表を作る
-#### TrigonometricTable.tex  
+### 三角比の表
+#### TrigonometricTable.tex  
 0 度から 90 度まで step 度刻みの「三角比の表」が作成できます。  
 step=0.1 にすると、2段組10ページの表ができる。  
 step=1.0 で小数点以下第4位表示にすると、 高校数学教科書によくある表ができます。  
