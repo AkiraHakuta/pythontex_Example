@@ -40,8 +40,8 @@ pdflatex.exe -synctex=1 -interaction=nonstopmode TrigonometricTable.tex
 n人の中に同じ誕生日の人がいない（つまり、n人の誕生日がすべて異なる）  
 確率を求める関数 distinct_prob(n) を定義しています。  
 n人の中に同じ誕生日の人がいる確率は 1 - distinct_prob(n) です。  
-テレビのクイズ番組で、何度か出題されました。  
-実行すると、1 - distinct_prob(n) ( n = 2, 3, ...,100 ) のグラフの pdf を作成し、表示します。xで終了。  
+テレビのクイズ番組で、何度か出題されました。  
+実行すると、1 - distinct_prob(n) ( n = 2, 3, ...,100 ) のグラフの pdf を作成し、表示します。xで終了。   
 さらに、  
 There are 40 persons in my class. The Birthday-Problem's probability is 0.891.  
 と出力します。  
@@ -76,8 +76,8 @@ print(r"{:4.1f}$^\circ$ & {:8.6f}  & {:8.6f} & {:8.6f}\\"
 ```
 のように、表(tabular)のコードを書き込んでいくだけです。   
 one_page_print は、2段組み、左右半ページを作成する関数。    
-マクロで書かれたものより、python の方が分かり易いと、思うのですが、如何でしょうか。  
-※ math は標準ライブラリに含まれているので、pip でインスツールする必要はありません。   
+マクロで書かれたものより、python の方が分かり易いと、思うのですが、如何でしょうか。  
+※ math は標準ライブラリに含まれているので、pip でインスツールする必要はありません。    
 
 
 
