@@ -40,7 +40,7 @@ pdflatex.exe -synctex=1 -interaction=nonstopmode TrigonometricTable.tex
 n人の中に同じ誕生日の人がいない（つまり、n人の誕生日がすべて異なる）  
 確率を求める関数 distinct_prob(n) を定義しています。  
 n人の中に同じ誕生日の人がいる確率は 1 - distinct_prob(n) です。  
-何度かテレビのクイズ番組で出題されました。  
+テレビのクイズ番組で、何度か出題されました。  
 実行すると、1 - distinct_prob(n) ( n = 2, 3, ...,100 ) のグラフの pdf を作成し、表示します。xで終了。  
 さらに、  
 There are 40 persons in my class. The Birthday-Problem's probability is 0.891.  
@@ -58,8 +58,8 @@ probability.py で定義した関数 distinct_prob をfrom probability import di
 で cnum 人の中に同じ誕生日の人がいる確率を書き込みます。  
 tex のコードのなかに、python のコードをすべて書き込む方法もありますが、    
 python のコードをcopy, past する。  
-初めの pdflatex で画像なしのエラーがでる。    
-あまり自然ではありません。    
+初めの pdflatex で画像なしのエラーがでる。  
+あまり自然ではありません。  
 特別な事情がないのであれば、画像は事前に作成し、  
 python のコードは、上記のように、import で取り込む。  
 この場合は、この方法が best!  
