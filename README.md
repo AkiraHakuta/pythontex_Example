@@ -1,4 +1,4 @@
-## PythonTex Example
+## PythonTeX Example
 
 ## Installation (windows)
 
